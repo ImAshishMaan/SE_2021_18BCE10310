@@ -8,22 +8,33 @@ int main(){
     
     string userInput;
     
-    g.displayBoard();
-    
     cout<<"player1 Input: ";
     for(int i=0;i<5;i++){
         cin>>userInput;
-        userInput="A-"+userInput;
-        g.placeplayer(userInput,4,i);
+        g.placeplayer("A",userInput,4,i);
     }
 
     cout<<"player2 Input: ";
     for(int i=0;i<5;i++){
         cin>>userInput;
-        userInput="B-"+userInput;
-        g.placeplayer(userInput,0,i);
+        g.placeplayer("B",userInput,0,i);
     }
-
     g.displayBoard();
+
+    //checking all player locations stored g.playerlocations();
+    bool player = true;
+    string move;
+    while(true){
+        cin>>move;
+        if(player){
+            g.movePlayer("P1",move);
+            player=!player;
+        }
+        else{
+            g.movePlayer("P2",move);
+            player=!player;
+        }
+        g.displayBoard();
+    }
     return 0;
 }
