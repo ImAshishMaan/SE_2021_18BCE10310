@@ -25,14 +25,17 @@ int main(){
     bool player = true;
     string move;
     while(true){
+        bool success;
         cin>>move;
         if(player){
-            g.movePlayer("P1",move);
-            player=!player;
+            success = g.movePlayer("P1",move);
+            if(success)
+                player=!player;
         }
         else{
-            g.movePlayer("P2",move);
-            player=!player;
+            success = g.movePlayer("P2",move);
+            if(success)
+                player=!player;
         }
         g.displayBoard();
     }
