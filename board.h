@@ -46,7 +46,6 @@ class Game{
         if(player=="P2"){
             p1.erase(board[x][y].substr(2,4));
         }
-        playerlocations();
     }
     bool movePlayer(string player,string input){
         string character = input.substr(0,2);
